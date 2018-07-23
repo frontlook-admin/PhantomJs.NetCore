@@ -12,13 +12,13 @@ namespace ConsoleApplication
     {
         private static readonly string _currentDirectory;
         private static readonly string _phantomJsRootFolder;
-        private static readonly IPdfGenerator _generator;
+        private static readonly IHtmlToPdfConverter _generator;
 
         static ExampleProgram()
         {
             _currentDirectory = Directory.GetCurrentDirectory();
             _phantomJsRootFolder = Path.Combine(_currentDirectory, "PhantomJsRoot");
-            _generator = new PdfGenerator(new PdfGeneratorOptions(_phantomJsRootFolder));
+            _generator = new PhantomJsHtmlToPdfConverter(new PdfGeneratorOptions(_phantomJsRootFolder));
         }
         public static void Main(string[] args)
         {
@@ -102,7 +102,7 @@ namespace ConsoleApplication
 
         private static void ConvertHtml(string htmlToConvert)
         {
-            var pathOftheGeneratedPdf = _generator.GeneratePdf(htmlToConvert, _currentDirectory);
+            var pathOftheGeneratedPdf = _generator.Convert(htmlToConvert, _currentDirectory);
             Console.WriteLine($"Pdf generated at: {pathOftheGeneratedPdf}");
         }
     }

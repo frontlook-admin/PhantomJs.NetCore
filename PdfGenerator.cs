@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace PhantomJs.NetCore
 {
-    public interface IPdfGenerator
+    public interface IHtmlToPdfConverter
     {
         /// <summary>
         /// Render the specified HTML code to a PDF.
@@ -14,15 +14,15 @@ namespace PhantomJs.NetCore
         /// <param name="html">The HTML to convert to PDF.</param>
         /// <param name="outputFolder">The directory to save the PDF to.</param>
         /// <returns>The full file path of the generated PDF.</returns>
-        string GeneratePdf(string html, string outputFolder);
+        string Convert(string html, string outputFolder);
     }
 
-    public class PdfGenerator : IPdfGenerator
+    public class PhantomJsHtmlToPdfConverter : IHtmlToPdfConverter
     {
         private readonly OS _platform;
         private readonly PdfGeneratorOptions _options;
 
-        public PdfGenerator(PdfGeneratorOptions options)
+        public PhantomJsHtmlToPdfConverter(PdfGeneratorOptions options)
         {
             _options = options ?? throw new ArgumentNullException(nameof(options));
             _platform = GetOsPlatform();
@@ -35,7 +35,7 @@ namespace PhantomJs.NetCore
         /// <param name="html">The HTML to convert to PDF.</param>
         /// <param name="outputFolder">The directory to save the PDF to.</param>
         /// <returns>The file name of the generated PDF.</returns>
-        public string GeneratePdf(string html, string outputFolder)
+        public string Convert(string html, string outputFolder)
         {
             // Write the passed html in a file.
             var htmlFileName = WriteHtmlToTempFile(html);

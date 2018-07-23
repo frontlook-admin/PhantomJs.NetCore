@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhantomJs.NetCore", "PhantomJs.NetCore.csproj", "{D275DCE0-847B-493E-A21A-8CFD149A4D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomJs.NetCore", "PhantomJs.NetCore.csproj", "{D275DCE0-847B-493E-A21A-8CFD149A4D00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D3D0F93-7A1D-4CD3-AE28-0FD46FBF4C0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4B0AA86A-5A81-4D8A-BBB2-240D64C5A14D}"
 EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -30,5 +31,11 @@ Global
 		{D275DCE0-847B-493E-A21A-8CFD149A4D00}.Release|x64.Build.0 = Release|Any CPU
 		{D275DCE0-847B-493E-A21A-8CFD149A4D00}.Release|x86.ActiveCfg = Release|Any CPU
 		{D275DCE0-847B-493E-A21A-8CFD149A4D00}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66B8AC53-F492-4C13-A62B-7E96FD79CC13}
 	EndGlobalSection
 EndGlobal
