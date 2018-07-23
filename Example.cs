@@ -103,7 +103,7 @@ namespace ConsoleApplication
         private static void ConvertHtml(string htmlToConvert)
         {
             var pathOftheGeneratedPdf = _generator.GeneratePdf(htmlToConvert, _currentDirectory);
-            Console.WriteLine("Pdf generated at: " + pathOftheGeneratedPdf);
+            Console.WriteLine($"Pdf generated at: {pathOftheGeneratedPdf}");
         }
     }
 }
